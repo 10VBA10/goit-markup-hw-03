@@ -1,3 +1,4 @@
+/* Прописуємо та задаємо значення для основних кольорів тексту та фону */
 :root {
   --primary-text-color: #757575;
   --secondary-text-color: #ffffff;
@@ -8,7 +9,17 @@
   --hero-footer-bg-color: #2f303a;
   --hero-btn-hover-color: #188ce8;
 }
-
+/* Прописуємо box-sizing */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Задаємо основні кольори,шрифт та розмір для документа
+ !!! - не впливає на button,addres */
 body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
@@ -17,9 +28,12 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-ul {
-  list-style: none;
-}
+
+/* ширина контенту 1170px */
+/* ширина датеру справа-зліва15px*2 */
+/* 1200 */
+
+/* Клас для скриття заголовків */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -27,14 +41,18 @@ ul {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 /* ---HEADER--- */
-
+.conteiner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  border: 2px solid tomato;
+}
 /* logo */
 .logo {
   color: #000000;
@@ -63,6 +81,12 @@ ul {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+/* Онуляємо маркер списків в документі */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 /* contact */
 .contacts .contacts-link,
 .contacts .contacts-link {
@@ -82,14 +106,21 @@ ul {
 
 /* hero */
 .hero {
+  margin-top: 0;
+  margin-bottom: 0;
   background-color: var(--hero-footer-bg-color);
+  text-align: center;
+  /* height: 600px; */
+  /* width: 1600px; */
 }
 .hero-text {
+  margin-top: 0;
+  margin-bottom: 30px;
   color: var(--secondary-text-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
+  /* text-align: center; */
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -100,11 +131,21 @@ ul {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  /* display: flex; */
+  /* align-items: center;
+  text-align: center; */
   letter-spacing: 0.06em;
   cursor: pointer;
+  /* стилізуємо кнопку */
+  padding: 10px 32px;
+  min-width: 200px;
+  border-radius: 4px;
+  /* margin-bottom: 200px; */
+  /* border: 3px solid blueviolet;
+  outline: tomato;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto; */
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -170,6 +211,12 @@ ul {
   text-align: center;
   cursor: pointer;
   letter-spacing: 0.03em;
+
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 6px 22px;
+  min-width: 128px;
+  border-radius: 4px;
 }
 .projects-btn:hover,
 .projects-btn:focus {
