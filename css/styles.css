@@ -23,6 +23,7 @@ html {
 body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
+  
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.71;
@@ -46,6 +47,12 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Онуляємо маркер списків в документі */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 /* ---HEADER--- */
 .conteiner {
   margin-left: auto;
@@ -66,6 +73,21 @@ body {
   color: var(--accent-color);
 }
 /* site-nav */
+.main-nav{
+  display: flex;
+  align-items: center;
+}
+.site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+.site-nav .item {
+  border: 2px solid tomato;
+}
+/* Ставимо відступи в навігації між силками окрім першої та останьої */
+.site-nav .item+.item{
+  margin-left: 50px;
+}
 .site-nav .link {
   color: var(--section-title-text);
   font-weight: 500;
@@ -79,17 +101,23 @@ body {
   color: var(--accent-color);
 }
 .site-nav .link.current {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  
   color: var(--accent-color);
 }
-/* Онуляємо маркер списків в документі */
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 /* contact */
-.contacts .contacts-link,
-.contacts .contacts-link {
+.test-flex{
+  display: flex;
+}
+.contacts .item {
+  border: 2px solid tomato;
+}
+.contacts .item+.item{
+  margin-left: 50px;
+}
+.contacts .contacts-link {  
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -108,6 +136,7 @@ body {
 .hero {
   margin-top: 0;
   margin-bottom: 0;
+  
   background-color: var(--hero-footer-bg-color);
   text-align: center;
   /* height: 600px; */
@@ -116,36 +145,27 @@ body {
 .hero-text {
   margin-top: 0;
   margin-bottom: 30px;
+  
   color: var(--secondary-text-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  /* text-align: center; */
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .hero-btn {
+  padding: 10px 32px;
+  min-width: 200px;
+  border-radius: 4px;
+
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  /* display: flex; */
-  /* align-items: center;
-  text-align: center; */
   letter-spacing: 0.06em;
   cursor: pointer;
-  /* стилізуємо кнопку */
-  padding: 10px 32px;
-  min-width: 200px;
-  border-radius: 4px;
-  /* margin-bottom: 200px; */
-  /* border: 3px solid blueviolet;
-  outline: tomato;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto; */
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -157,19 +177,31 @@ body {
   color: var(--section-title-text);
 }
 .strange-title {
+  margin-top: 0;
+  
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
 }
 .strange-title-text {
+  margin-top: 0;
+  margin-bottom: 10px;
+  
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
+.list p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 /* work */
 .work-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  
   color: var(--section-title-text);
   font-weight: 700;
   font-size: 36px;
@@ -185,11 +217,17 @@ body {
   color: var(--section-title-text);
 }
 .team-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
 }
 .team-title-text {
+  margin-top: 0;
+  margin-bottom: 10px;
+  
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -197,6 +235,11 @@ body {
 .team-text {
   font-size: 16px;
   line-height: 1.19;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.team-img {
+  margin: 0;
 }
 
 /* ---MAIN---PORTFOLIO */
@@ -253,6 +296,7 @@ body {
 }
 /* logo */
 .logo-web-footer {
+  margin-top: 0;
   color: var(--secondary-text-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -262,9 +306,11 @@ body {
 }
 /* contacts */
 .addres {
+  margin-top: 0;
   font-style: normal;
 }
 .addres-map {
+  margin-top: 0;
   color: var(--secondary-text-color);
 }
 .addres-map:hover,
@@ -275,9 +321,11 @@ body {
 }
 .addres-map,
 .footer-contacts {
+  margin-top: 0;
   line-height: 1.71;
   text-decoration: none;
 }
 .footer-contacts {
+  margin-top: 0;
   color: rgba(255, 255, 255, 0.6);
 }
