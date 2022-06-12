@@ -92,9 +92,6 @@ body {
   display: flex;
   margin-left: 93px;
 }
-.site-nav .item {
-  /* border: 2px solid tomato; */
-}
 /* Ставимо відступи в навігації між силками окрім першої та останьої */
 .site-nav .item + .item {
   margin-left: 50px;
@@ -122,6 +119,7 @@ body {
 /* contact */
 .contacts {
   display: flex;
+  align-items: center;
 }
 .contacts .item {
   /* border: 2px solid tomato; */
@@ -288,7 +286,13 @@ body {
 }
 
 /* ---MAIN---PORTFOLIO */
-
+.projects-list {
+  display: flex;
+  justify-content: center;
+}
+.projects-list .projects-btn + .projects-btn {
+  margin-left: 8px;
+}
 .projects-btn {
   color: var(--section-title-text);
   background-color: var(--section-bg-color);
@@ -311,6 +315,10 @@ body {
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
 }
+.projects-list .projects-btn.current {
+  background-color: var(--accent-color);
+  color: var(--secondary-text-color);
+}
 .projects-title {
   font-weight: 700;
   font-size: 18px;
@@ -324,13 +332,13 @@ body {
   line-height: 1.88;
   color: var(--primary-text-color);
 }
-.projects-title:hover,
+.pro .projects-title:hover,
 .projects-title:focus,
 .projects-title-text:hover,
 .projects-title-text:focus {
   color: var(--accent-color);
 }
-/* не розумію-чому не спрацьовує??? */
+
 .project-cards {
   text-decoration: none;
 }
@@ -342,6 +350,8 @@ body {
 /* logo */
 .logo-web-footer {
   margin-top: 0;
+  margin-bottom: 20px;
+
   color: var(--secondary-text-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -367,6 +377,8 @@ body {
 .addres-map,
 .footer-contacts {
   margin-top: 0;
+  margin-bottom: 9px;
+
   line-height: 1.71;
   text-decoration: none;
 }
