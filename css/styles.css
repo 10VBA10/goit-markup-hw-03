@@ -8,6 +8,7 @@
   --section-bg-color: #f5f4fa;
   --hero-footer-bg-color: #2f303a;
   --hero-btn-hover-color: #188ce8;
+  --header-line-cl: #ececec;
 }
 /* Прописуємо box-sizing */
 html {
@@ -23,16 +24,12 @@ html {
 body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
-  
+
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-
-/* ширина контенту 1170px */
-/* ширина датеру справа-зліва15px*2 */
-/* 1200 */
 
 /* Клас для скриття заголовків */
 .visually-hidden {
@@ -54,14 +51,28 @@ body {
   margin: 0;
 }
 /* ---HEADER--- */
+/* ширина контенту 1170px */
+/* ширина датеру справа-зліва 15px*2 =1200px */
 .conteiner {
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
   border: 2px solid tomato;
 }
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.page-header {
+  /* width: 1600px; */
+  border-bottom: 1px solid var(--header-line-cl);
+}
 /* logo */
 .logo {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+
   color: #000000;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -73,7 +84,7 @@ body {
   color: var(--accent-color);
 }
 /* site-nav */
-.main-nav{
+.main-nav {
   display: flex;
   align-items: center;
 }
@@ -82,13 +93,18 @@ body {
   margin-left: 93px;
 }
 .site-nav .item {
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
 }
 /* Ставимо відступи в навігації між силками окрім першої та останьої */
-.site-nav .item+.item{
+.site-nav .item + .item {
   margin-left: 50px;
 }
 .site-nav .link {
+  /* втсановлюэмо силкам падінги, щоб користувач по ним попадав */
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--section-title-text);
   font-weight: 500;
   font-size: 14px;
@@ -101,23 +117,24 @@ body {
   color: var(--accent-color);
 }
 .site-nav .link.current {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  
   color: var(--accent-color);
 }
 /* contact */
-.test-flex{
+.contacts {
   display: flex;
 }
 .contacts .item {
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
+  margin-left: auto;
 }
-.contacts .item+.item{
+.contacts .item + .item {
   margin-left: 50px;
 }
-.contacts .contacts-link {  
+.contacts .contacts-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -136,7 +153,7 @@ body {
 .hero {
   margin-top: 0;
   margin-bottom: 0;
-  
+
   background-color: var(--hero-footer-bg-color);
   text-align: center;
   /* height: 600px; */
@@ -145,7 +162,7 @@ body {
 .hero-text {
   margin-top: 0;
   margin-bottom: 30px;
-  
+
   color: var(--secondary-text-color);
   font-weight: 900;
   font-size: 44px;
@@ -157,6 +174,7 @@ body {
   padding: 10px 32px;
   min-width: 200px;
   border-radius: 4px;
+  border: transparent;
 
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
@@ -172,13 +190,23 @@ body {
   background-color: var(--hero-btn-hover-color);
 }
 /* strange */
+.strange-list {
+  display: flex;
+  margin-bottom: 10px;
+}
+.strange-list-item {
+}
+.strange-list .strange-list-item + .strange-list-item {
+  margin-left: 30px;
+}
+
 .strange-title,
 .strange-title-text {
   color: var(--section-title-text);
 }
 .strange-title {
   margin-top: 0;
-  
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -187,26 +215,34 @@ body {
 .strange-title-text {
   margin-top: 0;
   margin-bottom: 10px;
-  
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
 .list p {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0;
+
+  width: 270px;
 }
 /* work */
 .work-title {
   margin-top: 0;
   margin-bottom: 50px;
-  
+
   color: var(--section-title-text);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+}
+.work-list {
+  display: flex;
+  justify-content: center;
+}
+.work-list .work-item + .work-item {
+  margin-left: 30px;
 }
 /* team */
 .team {
@@ -219,24 +255,33 @@ body {
 .team-title {
   margin-top: 0;
   margin-bottom: 50px;
-  
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
+  text-align: center;
+}
+.team-list {
+  display: flex;
+}
+.team-list .team-item + .team-item {
+  margin-left: 30px;
 }
 .team-title-text {
   margin-top: 0;
   margin-bottom: 10px;
-  
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  text-align: center;
 }
 .team-text {
   font-size: 16px;
   line-height: 1.19;
   margin-top: 0;
   margin-bottom: 10px;
+  text-align: center;
 }
 .team-img {
   margin: 0;
