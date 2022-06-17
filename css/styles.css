@@ -45,6 +45,21 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Reset */
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 370;
+  height: auto;
+}
+
 /* Онуляємо маркер списків в документі */
 .list {
   list-style: none;
@@ -55,9 +70,14 @@ body {
 /* ширина контенту 1170px */
 /* ширина датеру справа-зліва 15px*2 =1200px */
 .conteiner {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
+
+  outline: 1px solid red;
+
   /* border: 2px solid tomato; */
 }
 .section {
