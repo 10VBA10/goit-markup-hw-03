@@ -1,15 +1,23 @@
 /* Прописуємо та задаємо значення для основних кольорів тексту та фону */
 :root {
+  /* text colors */
   --primary-text-color: #757575;
   --secondary-text-color: #ffffff;
-  --accent-color: #2196f3;
   --section-title-text: #212121;
+  /* bg colors */
+  --accent-color: #2196f3;
   --primary-bg-color: #ffffff;
   --section-bg-color: #f5f4fa;
   --hero-footer-bg-color: #2f303a;
+  /* hover, focus colors */
   --hero-btn-hover-color: #188ce8;
+  /* lines colors*/
   --header-line-cl: #ececec;
+  /* borders colors*/
   --cards-border-cl: #eeeeee;
+  /* others */
+  --items: 3;
+  --indent: 30px;
 }
 /* Прописуємо box-sizing для всього документу*/
 html {
@@ -73,7 +81,7 @@ address {
   margin-left: auto;
   margin-right: auto;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 /* Онуляємо маркер списків в документі */
 .list {
@@ -181,9 +189,7 @@ address {
 }
 .hero-text {
   width: 696px;
-  /* margin-left: 273px;
-  margin-right: 273px; */
-  margin: 0, auto;
+
   margin-bottom: 30px;
 
   color: var(--secondary-text-color);
@@ -244,7 +250,6 @@ address {
   text-transform: uppercase;
 }
 .list .strange-text {
-  margin: 0;
   width: 270px;
 }
 
@@ -254,7 +259,6 @@ address {
   padding-bottom: 0px;
 }
 .work-title {
-  margin-top: 0;
   margin-bottom: 50px;
 
   color: var(--section-title-text);
@@ -263,14 +267,16 @@ address {
   line-height: 1.17;
   text-align: center;
 }
-.work-list {
+/* .work-list {
   display: flex;
   justify-content: center;
 }
 .work-list .work-item + .work-item {
   margin-left: 30px;
-}
+} */
+
 /* team */
+
 .team {
   background-color: var(--section-bg-color);
 }
@@ -287,7 +293,8 @@ address {
   text-align: center;
 }
 .team-list {
-  display: flex;
+  ---items: 4;
+
   justify-content: center;
   text-align: center;
 }
@@ -298,9 +305,9 @@ address {
   box-shadow: 0px 1px 1px 0px #00000024;
   box-shadow: 0px 1px 3px 0px #0000001f;
 }
-.team-list .team-item + .team-item {
+/* .team-list .team-item + .team-item {
   margin-left: 30px;
-}
+} */
 .team-sign {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -318,15 +325,16 @@ address {
   line-height: 1.19;
   margin-top: 0;
 }
+
 /* ---MAIN---PORTFOLIO */
+
 .projects-list-btn {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 .projects-list-btn .projects-list-item + .projects-list-item {
   margin-left: 8px;
-
-  margin-bottom: 34px;
 }
 .projects-btn {
   color: var(--section-title-text);
@@ -354,40 +362,44 @@ address {
   background-color: var(--accent-color);
   color: var(--secondary-text-color);
 }
-.projects {
-  width: 1200px;
-  /* padding-left: 15px;
-  padding-right: 15px; */
-  margin-left: auto;
-  margin-right: auto;
-
-  text-align: center;
-}
-.projects-list-cards {
+.card-set {
   display: flex;
   flex-wrap: wrap;
+  /* вказуємо мінусовий маржин -15px */
+  margin: calc(-1 * var(--indent) / 2);
 }
-.projects-cards-item {
-  width: 370px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid var(--cards-border-cl);
-}
-.projects-img {
-  margin-bottom: 20px;
-}
-.projects-cards-item:nth-child(3n) {
+.card-set-item {
+  /* Варіант від Яріка */
+  /* вказуємо маржин 15px */
+  margin: calc(var(--indent) / 2);
+  /* розраховуємо кількість карток в ряд з урахуванням марженів між картками 30px та 3 картки в ряд */
+  flex-basis: calc((100% - var(var(--indent)) * var(--items))) / var(--items);
+
+  /*Стандартний варіант*/
+  /* width: 370px; */
+  /* margin-right: 30px;
+  margin-bottom: 30px; */
+
+  /* Варіант від Репети */
+  /* .projects-cards-item:nth-child(3n) {
   margin-right: 0px;
 }
 .projects-cards-item:nth-last-child(-n + 3) {
   margin-bottom: 0px;
-}
-
-/* .projects-list-cards .projects-cards-item + .project-cards-item {
+} */
+  /* .projects-list-cards .projects-cards-item + .project-cards-item {
   margin-left: 10px;
 } */
+
+  /* flex-basis - використовуємо у flex замість width */
+  /* flex-shrink:1 за замовчанням, якщо ставим 0 - то забороняєм зжиматися*/
+  /* flex-grow:0 за замовчанням якщо ставимо 2 то дозволяєму елементу рости в два рази - то  */
+}
+.projects-cards-item {
+  background-color: var(--primary-bg-color);
+}
+
 .projects-title {
-  margin-top: 0px;
   margin-bottom: 4px;
 
   font-weight: 700;
@@ -396,20 +408,22 @@ address {
   letter-spacing: 0.06em;
   color: var(--section-title-text);
 }
+.projects-text {
+  border: 1px solid var(--cards-border-cl);
+  padding: 20px 24px;
+}
 .projects-title-text {
-  margin-top: 0px;
-
   font-size: 16px;
   line-height: 1.88;
   color: var(--primary-text-color);
 }
 
-.projects-title:hover,
+/* .projects-title:hover,
 .projects-title:focus,
 .projects-title-text:hover,
 .projects-title-text:focus {
   color: var(--accent-color);
-}
+} */
 
 /* ---FOOTER---*/
 
@@ -418,7 +432,7 @@ address {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.list .footer-item + .footer-item {
+.footer-item:not(:last-child) {
   margin-bottom: 9px;
 }
 /* logo */
