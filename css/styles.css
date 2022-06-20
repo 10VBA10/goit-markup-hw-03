@@ -98,7 +98,7 @@ address {
 /* ширина датеру справа-зліва 15px*2 =1200px */
 
 .page-header {
-  /* width: 1600px; */
+ 
   border-bottom: 1px solid var(--header-line-cl);
 }
 /* logo */
@@ -150,11 +150,9 @@ address {
   color: var(--accent-color);
 }
 /* contact */
-.contacts-header {
-  margin-left: auto;
-}
 .contacts {
   display: flex;
+  margin-left: auto;
 }
 .contacts .item + .item {
   margin-left: 50px;
@@ -180,10 +178,8 @@ address {
 /* hero */
 .hero {
   padding-top: 200px;
-  padding-left: 452px;
   padding-bottom: 200px;
-  padding-right: 452px;
-
+  
   background-color: var(--hero-footer-bg-color);
   text-align: center;
 }
@@ -223,7 +219,6 @@ address {
 /* strange */
 .strange-list {
   display: flex;
-  margin-bottom: 10px;
   justify-content: center;
 }
 .strange-list .strange-list-item + .strange-list-item {
@@ -297,7 +292,6 @@ address {
 .team-list {
   ---items: 4;
 
-  justify-content: center;
   text-align: center;
 }
 .team-item {
@@ -350,9 +344,9 @@ address {
   letter-spacing: 0.03em;
 
   display: inline-block;
-  border: 1px solid transparent;
+  border: none;
   padding: 6px 22px;
-  min-width: 128px;
+  /* min-width: 128px; */
   border-radius: 4px;
 }
 .projects-btn:hover,
